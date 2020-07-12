@@ -1,2 +1,5 @@
-# Nat-company-Footer
-Simple footer 
+# Footer section
+
+## Tour company footer
+
+* __Simple__ footer demo
