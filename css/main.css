@@ -13,5 +13,84 @@ html {
 body {
   font-family: "Lato", sans-serif;
   box-sizing: border-box;
+  padding: 1rem 3rem;
+  background-color: #eee;
+}
+
+.row {
+  width: 120rem;
+  margin: 0 auto;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.row [class^="col-"] {
+  float: left;
+  width: calc((100% - 8rem) / 2);
+}
+
+.row [class^="col-"]:not(:last-child) {
+  margin-right: 8rem;
+}
+
+.footer {
+  padding: 8rem 0;
+  margin-top: 11rem;
+  background-color: #333;
+}
+
+.footer__logo-box {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.footer__logo {
+  width: 13rem;
+  height: auto;
+  transform: translateX(-4.5rem);
+}
+
+.footer__navigation {
+  padding-top: 3rem;
+  border-top: 1px solid #777;
+  display: inline-block;
+}
+
+.footer__list {
+  list-style: none;
+}
+
+.footer__item {
+  display: inline-block;
+}
+
+.footer__item:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.footer__link:link, .footer__link:visited {
+  text-decoration: none;
+  color: #eee;
+  font-size: 1.8rem;
+  display: inline-block;
+  transition: all .2s;
+}
+
+.footer__link:hover, .footer__link:active {
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.7);
+  color: #7ed56f;
+  transform: rotate(6deg) scale(1.15);
+}
+
+.footer__copyright {
+  color: #999;
+  font-size: 1.8rem;
+  padding-top: 3rem;
+  border-top: 1px solid #777;
+  word-spacing: 5px;
 }
 /*# sourceMappingURL=main.css.map */

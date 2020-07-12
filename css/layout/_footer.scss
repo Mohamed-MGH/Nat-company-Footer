@@ -1,41 +1,129 @@
 /////////  VARIABLES
+$color-green-light: #55c57a;
+$color-green-dark: #7ed56f;
+
+$color-orange-light: #ffb900;
+$color-orange-dark: #ff7730;
+
+$color-blue-light: #2998ff;
+$color-blue-dark: #5643fa;
+
 $color-grey-light-1: #f7f7f7;
 $color-grey-light-2: #eee;
-
 
 $color-grey-dark: #777;
 $color-grey-dark-1: #999;
 $color-grey-dark-2: #333;
 
-////////////////////// 
-//////////// MIXINS 
+$color-black: #000;
+
+//////////////////////
+//////////// MIXINS
 
 @mixin clearfix {
-    &::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-    
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 }
 
-
-/////////////////////// 
-
+///////////////////////
 
 *,
 *::before,
 *::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
 }
 
 html {
-    font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-    font-family: "Lato", sans-serif;
-    box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  padding: 1rem 3rem;
+  background-color: $color-grey-light-2;
 }
+
+.row {
+  width: 120rem;
+  margin: 0 auto;
+  @include clearfix;
+
+  [class^="col-"] {
+    // background-color: orangered;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: 8rem;
+    }
+
+    width: calc((100% - 8rem) / 2);
+  }
+}
+
+.footer {
+    padding: 8rem 0;
+    margin-top: 11rem;
+    background-color: $color-grey-dark-2;
+  &__logo-box {
+      text-align: center;
+      margin-bottom: 5rem;
+  }
+
+  &__logo {
+      width: 13rem;
+      height: auto;
+      transform: translateX(-4.5rem);
+  }
+
+  &__navigation {
+      padding-top: 3rem;
+      border-top: 1px solid $color-grey-dark;
+      display: inline-block;
+  }
+
+  &__list {
+      list-style: none;
+  }
+
+  &__item {
+    display: inline-block;
+    // background-color: black;
+
+    &:not(:last-child) {
+        margin-right: 2rem;
+    }
+  }
+
+  &__link {
+     &:link,
+     &:visited {
+        text-decoration: none;
+        color: $color-grey-light-2;
+        font-size: 1.8rem;
+        display: inline-block;
+        transition: all .2s;
+     }
+
+     &:hover,
+     &:active {
+         box-shadow: 0 1rem 2rem rgba($color-black, .7);
+         color: $color-green-dark;
+         transform: rotate(6deg) scale(1.15);
+     }
+      
+  }
+
+  &__copyright {
+      color: $color-grey-dark-1;
+      font-size: 1.8rem;
+      padding-top: 3rem;
+      border-top: 1px solid $color-grey-dark;
+      word-spacing: 5px;;
+  }
+  }
